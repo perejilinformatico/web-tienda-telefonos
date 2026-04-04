@@ -4,10 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FONE — Next-Gen Smartphones</title>
+  <meta name="description" content="Una tienda de telefonos online">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#000000" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="" />
+  <meta property="og:title" content="FONE — Next-Gen Smartphones" />
+  <meta property="og:description" content="Una tienda de telefonos online" />
+  <meta property="og:image" content="assets/icon.png" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FONE — Next-Gen Smartphones" />
+  <meta name="twitter:description" content="Una tienda de telefonos online" />
+  <meta name="twitter:image" content="assets/icon.png" />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
@@ -25,7 +42,7 @@
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-tag fade-up">Colección 2025</div>
+      <div class="hero-tag fade-up">Colección 2026</div>
       <h1 class="hero-headline fade-up delay-1">
         EL<br>
         FUTURO<br>
@@ -45,14 +62,17 @@
     <div class="hero-right">
       <div class="spline-slot">
         <model-viewer 
-         src="modelo.glb"
+         src="assets/Phone.glb"
          alt="Telefono 3D"
+           camera-controls
+           disable-zoom
+           disable-pan
+           interaction-prompt="none"
+           touch-action="none"
+           ui="none"
          shadow-intensity="1"
          style="width: 400px; height: 400px; background-color: transparent;">
        </model-viewer>
-        <div class="spline-icon">◈</div>
-        <span class="spline-label">Objeto 3D — Spline aquí</span>
-      </div>
     </div>
   </section>
 
@@ -112,14 +132,12 @@
         <div class="col-lg-7">
           <div class="featured-3d">
             <model-viewer 
-             src="modelo.glb"
+             src="assets/Phone.glb"
              alt="Telefono 3D"
              auto-rotate
              shadow-intensity="1"
              style="width: 400px; height: 400px; background-color: transparent;">
            </model-viewer>
-            <div class="spline-icon" style="width:80px;height:80px;font-size:2rem;border-color:#333;color:#444;">◈</div>
-            <span class="spline-label">Render 3D del producto — Spline aquí</span>
           </div>
         </div>
       </div>
@@ -141,14 +159,9 @@
           <div class="product-card">
             <div class="product-img-wrap">
               <div class="product-badge">Nuevo</div>
-              <!--
-                REEMPLAZÁ CON IMAGEN O SPLINE VIEWER
-                <img src="tu-imagen.png" alt="..." style="width:100%;height:100%;object-fit:cover;" />
-              -->
-              <div class="spline-icon" style="width:56px;height:56px;color:var(--gray-mid);">◈</div>
               <span class="spline-label">
                 <model-viewer 
-                src="modelo.glb"
+                src="assets/Phone.glb"
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
@@ -171,10 +184,9 @@
         <div class="col-md-4">
           <div class="product-card">
             <div class="product-img-wrap">
-              <div class="spline-icon" style="width:56px;height:56px;color:var(--gray-mid);">◈</div>
               <span class="spline-label">
                 <model-viewer 
-                src="modelo.glb"
+                src="assets/Phone.glb"
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
@@ -198,10 +210,9 @@
           <div class="product-card">
             <div class="product-img-wrap">
               <div class="product-badge" style="background:#555;">Oferta</div>
-              <div class="spline-icon" style="width:56px;height:56px;color:var(--gray-mid);">◈</div>
               <span class="spline-label">
                 <model-viewer 
-                src="modelo.glb"
+                src="assets/Phone.glb"
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
@@ -224,8 +235,15 @@
         <div class="col-md-4">
           <div class="product-card">
             <div class="product-img-wrap">
-              <div class="spline-icon" style="width:56px;height:56px;color:var(--gray-mid);">◈</div>
-              <span class="spline-label">Imagen / 3D</span>
+              <span class="spline-label">
+                <model-viewer 
+                src="assets/Phone.glb"
+                alt="Telefono 3D"
+                auto-rotate
+                shadow-intensity="1"
+                style="width: 400px; height: 400px;">
+              </model-viewer>
+              </span>
             </div>
             <div class="product-info">
               <div class="product-name">FONE FOLD</div>
@@ -243,8 +261,15 @@
           <div class="product-card">
             <div class="product-img-wrap">
               <div class="product-badge">Hot</div>
-              <div class="spline-icon" style="width:56px;height:56px;color:var(--gray-mid);">◈</div>
-              <span class="spline-label">Imagen / 3D</span>
+              <span class="spline-label">
+               <model-viewer 
+                src="assets/Phone.glb"
+                alt="Telefono 3D"
+                auto-rotate
+                shadow-intensity="1"
+                style="width: 400px; height: 400px;">
+              </model-viewer>
+              </span>
             </div>
             <div class="product-info">
               <div class="product-name">FONE ULTRA</div>
@@ -261,8 +286,15 @@
         <div class="col-md-4">
           <div class="product-card">
             <div class="product-img-wrap">
-              <div class="spline-icon" style="width:56px;height:56px;color:var(--gray-mid);">◈</div>
-              <span class="spline-label">Imagen / 3D</span>
+              <span class="spline-label">
+              <model-viewer 
+                src="assets/Phone.glb"
+                alt="Telefono 3D"
+                auto-rotate
+                shadow-intensity="1"
+                style="width: 400px; height: 400px;">
+              </model-viewer>
+            </span>
             </div>
             <div class="product-info">
               <div class="product-name">FONE SE</div>
@@ -284,7 +316,6 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 feature-item">
-          <div class="feature-icon">⚡</div>
           <div class="feature-title">Envío Rápido</div>
           <p class="feature-desc">Recibís tu teléfono en 24hs. Gratis en pedidos superiores a $500.</p>
         </div>
@@ -348,15 +379,14 @@
       <p class="cta-sub">Stock limitado. No te quedes sin el tuyo.</p>
 
       <!-- 3D CTA SLOT -->
-      <div class="cta-3d">
-        <!--
-          ┌──────────────────────────────────────────────────┐
-          │  REEMPLAZÁ CON TU ESCENA SPLINE ANIMADA         │
-          │  (por ejemplo, teléfonos flotando / escena 3D)  │
-          └──────────────────────────────────────────────────┘
-        -->
-        <div class="spline-icon" style="width:72px;height:72px;font-size:1.8rem;border-color:#333;color:#444;">◈</div>
-        <span class="spline-label">Escena 3D animada — Spline aquí</span>
+      <div class="cta-3d" style="border: none;">
+                <model-viewer 
+                src="assets/Phone_two.glb"
+                alt="Telefono 3D"
+                auto-rotate
+                shadow-intensity="1"
+                style="width: 400px; height: 400px;">
+              </model-viewer>
       </div>
 
       <a href="#productos" class="btn-primary-custom" style="font-size:0.9rem;padding:1rem 3rem;">Ver toda la colección</a>
@@ -364,7 +394,7 @@
   </section>
 
   <!-- ── FOOTER ── -->
-  <footer>
+  <footer id="nosotros">
     <div class="container">
       <div class="row g-4 mb-2">
         <div class="col-md-4">
@@ -374,42 +404,42 @@
         <div class="col-md-2">
           <div class="footer-col-title">Tienda</div>
           <ul class="footer-links">
-            <li><a href="#">Todos los modelos</a></li>
-            <li><a href="#">Nuevos</a></li>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Accesorios</a></li>
+            <li><a href="#productos">Todos los modelos</a></li>
+            <li><a href="#destacado">Nuevos</a></li>
+            <li><a href="#productos">Ofertas</a></li>
+            <li><a href="#productos">Accesorios</a></li>
           </ul>
         </div>
         <div class="col-md-2">
           <div class="footer-col-title">Soporte</div>
           <ul class="footer-links">
-            <li><a href="#">Centro de ayuda</a></li>
-            <li><a href="#">Garantía</a></li>
-            <li><a href="#">Devoluciones</a></li>
-            <li><a href="#">Seguimiento</a></li>
+            <li><a href="#contacto">Centro de ayuda</a></li>
+            <li><a href="#garantia">Garantía</a></li>
+            <li><a href="#devoluciones">Devoluciones</a></li>
+            <li><a href="#seguimiento">Seguimiento</a></li>
           </ul>
         </div>
         <div class="col-md-2">
           <div class="footer-col-title">Empresa</div>
           <ul class="footer-links">
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Prensa</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#prensa">Prensa</a></li>
+            <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
         <div class="col-md-2">
           <div class="footer-col-title">Seguinos</div>
           <ul class="footer-links">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="#">Twitter / X</a></li>
+            <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2025 FONE. Todos los derechos reservados.</span>
+        <span class="footer-copy">© 2026 FONE. Todos los derechos reservados.</span>
         <span class="footer-copy">Privacidad · Términos · Cookies</span>
       </div>
     </div>

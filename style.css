@@ -9,7 +9,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scrollbar-color: black, var(--white); scrollbar-width: thin;  }
 
   body {
     background: var(--white);
@@ -452,6 +452,7 @@
     transition: all 0.3s ease;
     padding: 10px;
     border-radius: 1.4px;
+    letter-spacing: 2px;
   }
   .btn-ghost-transparant:hover { border-color: white; color: white; }
   /* Spline big slot in CTA */
