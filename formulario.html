@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comprar Teléfono - FONE</title>
+  <meta name="description" content="Formulario de compra de teléfonos en FONE">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/icon.png" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="index.html" class="nav-logo">FONE</a>
+    <ul class="nav-links">
+      <li><a href="index.html#productos">Productos</a></li>
+      <li><a href="index.html#destacado">Destacado</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location.href='index.html'">Volver</button>
+  </nav>
+
+  <!-- ── FORMULARIO DE COMPRA ── -->
+  <section class="container my-5 pt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="display-font text-center mb-5">COMPRAR TELÉFONO</h1>
+
+        <form id="purchaseForm" class="bg-light p-4 rounded shadow">
+          <!-- Información Personal -->
+          <h3 class="display-font mb-3">INFORMACIÓN PERSONAL</h3>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">Nombre *</label>
+              <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Apellido *</label>
+              <input type="text" class="form-control" id="lastName" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Teléfono *</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+          </div>
+
+          <!-- Selección de Teléfono -->
+          <h3 class="display-font mb-3 mt-4">SELECCIÓN DE TELÉFONO</h3>
+          <div class="mb-3">
+            <label for="phoneModel" class="form-label">Modelo de Teléfono *</label>
+            <select class="form-select" id="phoneModel" required>
+              <option value="">Selecciona un modelo</option>
+              <option value="iphone-15-pro">iPhone 15 Pro - $1,199</option>
+              <option value="samsung-s24-ultra">Samsung Galaxy S24 Ultra - $1,299</option>
+              <option value="google-pixel-8-pro">Google Pixel 8 Pro - $999</option>
+              <option value="oneplus-12">OnePlus 12 - $899</option>
+              <option value="xiaomi-14">Xiaomi 14 - $799</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Cantidad *</label>
+            <input type="number" class="form-control" id="quantity" min="1" max="10" value="1" required>
+          </div>
+
+          <!-- Dirección de Envío -->
+          <h3 class="display-font mb-3 mt-4">DIRECCIÓN DE ENVÍO</h3>
+          <div class="mb-3">
+            <label for="address" class="form-label">Dirección *</label>
+            <input type="text" class="form-control" id="address" placeholder="Calle, número, piso, etc." required>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="city" class="form-label">Ciudad *</label>
+              <input type="text" class="form-control" id="city" required>
+            </div>
+            <div class="col-md-4">
+              <label for="postalCode" class="form-label">Código Postal *</label>
+              <input type="text" class="form-control" id="postalCode" required>
+            </div>
+            <div class="col-md-4">
+              <label for="country" class="form-label">País *</label>
+              <select class="form-select" id="country" required>
+                <option value="ES">España</option>
+                <option value="MX">México</option>
+                <option value="AR">Argentina</option>
+                <option value="CO">Colombia</option>
+                <option value="PE">Perú</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Método de Pago -->
+          <h3 class="display-font mb-3 mt-4">MÉTODO DE PAGO</h3>
+          <div class="mb-3">
+            <label class="form-label">Método de Pago *</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="card" value="card" required>
+              <label class="form-check-label" for="card">
+                Tarjeta de Crédito/Débito
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
+              <label class="form-check-label" for="paypal">
+                PayPal
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="transfer" value="transfer">
+              <label class="form-check-label" for="transfer">
+                Transferencia Bancaria
+              </label>
+            </div>
+          </div>
+
+          <!-- Detalles de Tarjeta (se mostrarán si se selecciona tarjeta) -->
+          <div id="cardDetails" class="d-none">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="cardNumber" class="form-label">Número de Tarjeta *</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="expiryDate" class="form-label">Fecha de Expiración *</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA">
+              </div>
+              <div class="col-md-6">
+                <label for="cvv" class="form-label">CVV *</label>
+                <input type="text" class="form-control" id="cvv" placeholder="123">
+              </div>
+            </div>
+          </div>
+
+          <!-- Comentarios -->
+          <div class="mb-3">
+            <label for="comments" class="form-label">Comentarios (opcional)</label>
+            <textarea class="form-control" id="comments" rows="3" placeholder="Instrucciones especiales de entrega, etc."></textarea>
+          </div>
+
+          <!-- Términos y Condiciones -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="terms" required>
+            <label class="form-check-label" for="terms">
+              Acepto los <a href="#" target="_blank">términos y condiciones</a> *
+            </label>
+          </div>
+
+          <!-- Botón de Enviar -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark btn-lg px-5">COMPRAR AHORA</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mostrar/ocultar detalles de tarjeta según el método de pago seleccionado
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const cardDetails = document.getElementById('cardDetails');
+        if (this.value === 'card') {
+          cardDetails.classList.remove('d-none');
+        } else {
+          cardDetails.classList.add('d-none');
+        }
+      });
+    });
+
+    // Validación básica del formulario
+    document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Aquí iría la lógica para procesar la compra
+      alert('¡Gracias por tu compra! Procesaremos tu pedido pronto.');
+
+      // Resetear formulario
+      this.reset();
+      document.getElementById('cardDetails').classList.add('d-none');
+    });
+  </script>
+
+</body>
+</html>
