@@ -1,12 +1,12 @@
-# 🚀 [TÍTULO DEL PROYECTO]
+# Web tienda de telefonos (Diseño)
 
->  _[Diseño web html css y boostrap de tienda de telefonos]_
+>  _Diseño web html css y boostrap de tienda de telefonos_
 
 ---
 
 ## Descripción
 
-[Un proyecto final de un diseño web para una tienda de venta de telefonos]
+Un proyecto final de un diseño web para una tienda de venta de telefonos
 
 ---
 
