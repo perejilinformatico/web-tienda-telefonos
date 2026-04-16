@@ -15,4 +15,3 @@ Un proyecto final de un diseño web para una tienda de venta de telefonos
 -  [ HTML ]
 -  [ CSS ]
 -  [ Boostrap ]
-
