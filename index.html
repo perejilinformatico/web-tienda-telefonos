@@ -25,6 +25,17 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    #aspect-ration { animation: aspectShowAndHide 0.5s ease-in-out forwards; }
+    @keyframes aspectShowAndHid {
+      0% {
+        opacity: 0;
+      }
+      100% {
+         opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -43,16 +54,16 @@
   <section class="hero">
     <div class="hero-left">
       <div class="hero-tag fade-up">Colección 2026</div>
-      <h1 class="hero-headline fade-up delay-1">
+      <h1 class="hero-headline fade-up delay-1" id="aspect-ration">
         EL<br>
         FUTURO<br>
         <span>EN TUS</span><br>
         MANOS
       </h1>
-      <p class="hero-body fade-up delay-2">
+      <p class="hero-body fade-up delay-2" id="aspect-ration">
         Smartphones diseñados para quienes no se conforman con lo ordinario. Potencia, diseño y tecnología en un solo dispositivo.
       </p>
-      <div class="hero-actions fade-up delay-3">
+      <div class="hero-actions fade-up delay-3" id="aspect-ration">
         <a href="#productos" class="btn-primary-custom">Ver colección</a>
         <a href="#destacado" class="btn-ghost">Saber más</a>
       </div>
