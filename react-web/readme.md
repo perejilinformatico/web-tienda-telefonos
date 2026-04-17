@@ -28,7 +28,6 @@ Está diseñada con una estética moderna y minimalista, priorizando la experien
 
 ## Tecnologías
 
-- ⚛️ React
 - 🎨 Boostrap/CSS3
 - 🌐 HTML5
 - 💡 JavaScript
