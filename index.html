@@ -35,10 +35,86 @@
          opacity: 1;
       }
     }
+    .desplegable_menu.action.action { display: flex;  } 
   </style>
 </head>
 <body>
+<div class="desplegable_menu" style="
+  position: fixed;
+  top: 0;
+  right: 0;
 
+  width: clamp(250px, 100vw, 700px);
+  height: 100vh;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+
+  padding: clamp(15px, 4vw, 30px);
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(30px, 6vw, 80px);
+
+  z-index: 500;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+">
+
+  <svg width="40" height="40" id="menu_cierre" viewBox="0 0 24 24" style="
+    position: absolute;
+    top: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 20px);
+    cursor: pointer;
+  ">
+    <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 4vw, 30px);
+    text-align: center;
+  ">
+    <li><a href="#productos" class="a_link_js" style="
+      text-decoration: none;
+      color: black;
+      font-size: clamp(16px, 4vw, 22px);
+    ">PRODUCTOS</a></li>
+
+    <li><a href="#destacado" class="a_link_js" style="
+      text-decoration: none;
+      color: black;
+      font-size: clamp(16px, 4vw, 22px);
+    ">DESTACADO</a></li>
+
+    <li><a href="#nosotros" class="a_link_js" style="
+      text-decoration: none;
+      color: black;
+      font-size: clamp(16px, 4vw, 22px);
+    ">NOSOTROS</a></li>
+  </ul>
+
+  <a href="formulario.html" style="
+    text-decoration: none;
+    background: black;
+    color: white;
+
+    padding: clamp(10px, 3vw, 16px);
+    font-size: clamp(14px, 3.5vw, 18px);
+
+    text-align: center;
+    border-radius: 2px;
+    letter-spacing: 3px;
+  ">
+    COMPRAR AHORA
+  </a>
+
+</div>
   <!-- ── NAV ── -->
   <nav>
     <a href="#" class="nav-logo">FONE</a>
@@ -47,7 +123,16 @@
       <li><a href="#destacado">Destacado</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
     </ul>
-    <a href="formulario.html" class="nav-cta" style="text-decoration: none;">Comprar ahora</a>
+    <div id="menu_hamburgesa">
+      <svg width="40" height="40" viewBox="0 0 12 12">
+  <g>
+    <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="2.5"/>
+    <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="5.5"/>
+    <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="8.5"/>
+  </g>
+</svg>
+    </div>
+    <a href="formulario.html" class="nav-cta" style="text-decoration: none;" id="nav-cta">Comprar ahora</a>
   </nav>
 
   <!-- ── HERO ── -->
@@ -498,5 +583,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
   </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
