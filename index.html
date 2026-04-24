@@ -25,9 +25,96 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    #aspect-ration { animation: aspectShowAndHide 0.5s ease-in-out forwards; }
+    @keyframes aspectShowAndHide {
+      0% {
+        opacity: 0;
+      }
+      100% {
+         opacity: 1;
+      }
+    }
+    .desplegable_menu.action.action { display: flex;  } 
+  </style>
 </head>
 <body>
+<div class="desplegable_menu" style="
+  position: fixed;
+  top: 0;
+  right: 0;
 
+  width: clamp(250px, 100vw, 700px);
+  height: 100vh;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+
+  padding: clamp(15px, 4vw, 30px);
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(30px, 6vw, 80px);
+
+  z-index: 500;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+">
+
+  <svg width="40" height="40" id="menu_cierre" viewBox="0 0 24 24" style="
+    position: absolute;
+    top: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 20px);
+    cursor: pointer;
+  ">
+    <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 4vw, 30px);
+    text-align: center;
+  ">
+    <li><a href="#productos" class="a_link_js" style="
+      text-decoration: none;
+      color: black;
+      font-size: clamp(16px, 4vw, 22px);
+    ">PRODUCTOS</a></li>
+
+    <li><a href="#destacado" class="a_link_js" style="
+      text-decoration: none;
+      color: black;
+      font-size: clamp(16px, 4vw, 22px);
+    ">DESTACADO</a></li>
+
+    <li><a href="#nosotros" class="a_link_js" style="
+      text-decoration: none;
+      color: black;
+      font-size: clamp(16px, 4vw, 22px);
+    ">NOSOTROS</a></li>
+  </ul>
+
+  <a href="formulario.html" style="
+    text-decoration: none;
+    background: black;
+    color: white;
+
+    padding: clamp(10px, 3vw, 16px);
+    font-size: clamp(14px, 3.5vw, 18px);
+
+    text-align: center;
+    border-radius: 2px;
+    letter-spacing: 3px;
+  ">
+    COMPRAR AHORA
+  </a>
+
+</div>
   <!-- ── NAV ── -->
   <nav>
     <a href="#" class="nav-logo">FONE</a>
@@ -36,23 +123,32 @@
       <li><a href="#destacado">Destacado</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
     </ul>
-    <button class="nav-cta">Comprar ahora</button>
+    <div id="menu_hamburgesa">
+      <svg width="40" height="40" viewBox="0 0 12 12">
+  <g>
+    <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="2.5"/>
+    <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="5.5"/>
+    <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="8.5"/>
+  </g>
+</svg>
+    </div>
+    <a href="formulario.html" class="nav-cta" style="text-decoration: none;" id="nav-cta">Comprar ahora</a>
   </nav>
 
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-left">
       <div class="hero-tag fade-up">Colección 2026</div>
-      <h1 class="hero-headline fade-up delay-1">
+      <h1 class="hero-headline fade-up delay-1" id="aspect-ration">
         EL<br>
         FUTURO<br>
         <span>EN TUS</span><br>
         MANOS
       </h1>
-      <p class="hero-body fade-up delay-2">
+      <p class="hero-body fade-up delay-2" id="aspect-ration">
         Smartphones diseñados para quienes no se conforman con lo ordinario. Potencia, diseño y tecnología en un solo dispositivo.
       </p>
-      <div class="hero-actions fade-up delay-3">
+      <div class="hero-actions fade-up delay-3" id="aspect-ration">
         <a href="#productos" class="btn-primary-custom">Ver colección</a>
         <a href="#destacado" class="btn-ghost">Saber más</a>
       </div>
@@ -73,6 +169,7 @@
          shadow-intensity="1"
          style="width: 400px; height: 400px; background-color: transparent;">
        </model-viewer>
+      </div>
     </div>
   </section>
 
@@ -125,8 +222,8 @@
           </p>
           <div class="price-tag">$1.299 <span>USD / cuotas sin interés</span></div>
           <div class="mt-4 d-flex gap-3">
-            <a href="#" class="btn-primary-custom" style="background:var(--white);color:var(--black);">Comprar</a>
-            <a href="#" class="btn-ghost-transparant">Ver specs</a>
+            <a href="formulario.html" class="btn-primary-custom" style="background:var(--white);color:var(--black);text-decoration: none;">Comprar</a>
+            <a href="#" class="btn-ghost-transparant" style="font-size: 10px;">VER SPECS</a>
           </div>
         </div>
         <div class="col-lg-7">
@@ -165,7 +262,7 @@
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
-                style="width: 400px; height: 400px;">
+                style="width: 300px; height: 300px;">
                </model-viewer>
               </span>
             </div>
@@ -174,7 +271,7 @@
               <div class="product-specs">200MP · Chip X1 · 6.7" OLED</div>
               <div class="product-footer">
                 <span class="product-price">$1.299</span>
-                <button class="product-btn">+</button>
+                <a href="formulario.html" class="product-btn" style="text-decoration: none;">+</a>
               </div>
             </div>
           </div>
@@ -190,7 +287,7 @@
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
-                style="width: 400px; height: 400px;">
+                style="width: 300px; height: 300px;">
               </model-viewer>
               </span>
             </div>
@@ -199,7 +296,7 @@
               <div class="product-specs">108MP · Chip A9 · 6.1" OLED</div>
               <div class="product-footer">
                 <span class="product-price">$899</span>
-                <button class="product-btn">+</button>
+                <a href="formulario.html" class="product-btn" style="text-decoration: none;">+</a>
               </div>
             </div>
           </div>
@@ -216,7 +313,7 @@
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
-                style="width: 400px; height: 400px;">
+                style="width: 300px; height: 300px;">
               </model-viewer>
               </span>
             </div>
@@ -225,7 +322,7 @@
               <div class="product-specs">64MP · Chip A7 · 6.0" LCD</div>
               <div class="product-footer">
                 <span class="product-price">$499</span>
-                <button class="product-btn">+</button>
+                <a href="formulario.html" class="product-btn" style="text-decoration: none;">+</a>
               </div>
             </div>
           </div>
@@ -241,7 +338,7 @@
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
-                style="width: 400px; height: 400px;">
+                style="width: 300px; height: 300px;">
               </model-viewer>
               </span>
             </div>
@@ -250,7 +347,7 @@
               <div class="product-specs">Plegable · 7.6" · Dual cámara</div>
               <div class="product-footer">
                 <span class="product-price">$1.799</span>
-                <button class="product-btn">+</button>
+                <a href="formulario.html" class="product-btn" style="text-decoration: none;">+</a>
               </div>
             </div>
           </div>
@@ -267,7 +364,7 @@
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
-                style="width: 400px; height: 400px;">
+                style="width: 300px; height: 300px;">
               </model-viewer>
               </span>
             </div>
@@ -276,7 +373,7 @@
               <div class="product-specs">200MP · Chip X2 · 6.9" AMOLED</div>
               <div class="product-footer">
                 <span class="product-price">$1.599</span>
-                <button class="product-btn">+</button>
+                <a href="formulario.html" class="product-btn" style="text-decoration: none;">+</a>
               </div>
             </div>
           </div>
@@ -292,7 +389,7 @@
                 alt="Telefono 3D"
                 auto-rotate
                 shadow-intensity="1"
-                style="width: 400px; height: 400px;">
+                style="width: 300px; height: 300px;">
               </model-viewer>
             </span>
             </div>
@@ -301,7 +398,7 @@
               <div class="product-specs">48MP · Chip A6 · 5.4" OLED</div>
               <div class="product-footer">
                 <span class="product-price">$349</span>
-                <button class="product-btn">+</button>
+                <a href="formulario.html" class="product-btn" style="text-decoration: none;">+</a>
               </div>
             </div>
           </div>
@@ -371,6 +468,45 @@
     </div>
   </section>
 
+  <!-- ── NOSOTROS ── -->
+  <section id="nosotros" class="about-us mt-5 m-5">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0.5rem !important;">
+        <div class="section-tag">Empresa</div>
+        <h2 class="section-title">SOBRE<br>NOSOTROS</h2>
+      </div>
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-md-6">
+          <p class="about-desc">
+            En FONE, creemos que la tecnología debe ser accesible, innovadora y sostenible. Fundada en 2020, nuestra misión es conectar a las personas con los mejores smartphones del mercado, ofreciendo productos de vanguardia con un servicio excepcional.
+          </p>
+          <p class="about-desc">
+            Nuestro equipo de expertos en tecnología selecciona cuidadosamente cada modelo, asegurando que cada dispositivo cumpla con los más altos estándares de calidad y rendimiento. Desde el diseño hasta la entrega, nos comprometemos a brindar una experiencia inolvidable.
+          </p>
+          <div class="about-stats mt-4">
+            <div class="row">
+              <div class="col-4">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Años de experiencia</div>
+              </div>
+              <div class="col-4">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Clientes satisfechos</div>
+              </div>
+              <div class="col-4">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Modelos disponibles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center p-5">
+          <img src="assets/img.jpg" style="width: 100%; height: auto; max-height: 500px; border-radius: 20px; object-fit: cover;" alt="FONE Sede">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CTA ── -->
   <section class="cta-section">
     <div class="bg-text">BUY</div>
@@ -394,7 +530,7 @@
   </section>
 
   <!-- ── FOOTER ── -->
-  <footer id="nosotros">
+  <footer id="footer">
     <div class="container">
       <div class="row g-4 mb-2">
         <div class="col-md-4">
@@ -447,5 +583,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
   </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
